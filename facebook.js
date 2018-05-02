@@ -1,3 +1,5 @@
+alert("IN");
+
 XMLHttpRequest.prototype.realSend = XMLHttpRequest.prototype.send;
 
 XMLHttpRequest.prototype.send = function(value) {
