@@ -1,10 +1,13 @@
-alert("IN");
+(function() {
+    XMLHttpRequest.prototype.realSend = XMLHttpRequest.prototype.send;
 
-XMLHttpRequest.prototype.realSend = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.send = function(value) {
 
-XMLHttpRequest.prototype.send = function(value) {
+        console.log("intercepting");
 
-    console.log("intercepting");
+        this.realSend(value);
+    };
 
-    this.realSend(value);
-};
+    alert("LOL")
+
+})();
